@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "4D Dependency Linkifier",
+  "version": "0.1.0",
+  "description": "Turns 4D dependencies.json GitHub references into clickable repository and release links.",
+  "icons": {
+    "16": "linkp.png",
+    "32": "linkp.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "linkp.png",
+      "32": "linkp.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*/*/blob/*/Project/Sources/dependencies.json"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "https://github.com/*/*/raw/*/Project/Sources/dependencies.json"
+  ]
+}

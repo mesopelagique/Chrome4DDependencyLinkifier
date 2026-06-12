@@ -1,0 +1,29 @@
+name: Release Extension
+
+on:
+  release:
+    types:
+      - published
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Create extension archive
+        env:
+          ARCHIVE_NAME: ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}.zip
+        run: |
+          mkdir -p dist
+          zip -r "dist/${ARCHIVE_NAME}" manifest.json content.js linkp.png README.md
+
+      - name: Upload archive to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip
