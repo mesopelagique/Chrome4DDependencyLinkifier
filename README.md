@@ -15,6 +15,8 @@ the extension:
 
 Example:
 
+https://github.com/mesopelagique/MCP/blob/main/Project/Sources/dependencies.json
+
 ```json
 {
   "dependencies": {
