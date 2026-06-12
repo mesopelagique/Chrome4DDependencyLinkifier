@@ -40,6 +40,23 @@ becomes clickable as:
 3. Click Load unpacked.
 4. Select this folder.
 
+## Install From A GitHub Release
+
+The release asset is a plain zip archive of the extension files.
+
+Chrome does not install this zip directly.
+
+To install from a release:
+
+1. Download the release zip.
+2. Extract it to a folder.
+3. Open `chrome://extensions`.
+4. Enable Developer mode.
+5. Click Load unpacked.
+6. Select the extracted folder.
+
+If you prefer, you can also clone this repository and load the repository folder the same way.
+
 ## Files
 
 - `manifest.json`: MV3 extension manifest
